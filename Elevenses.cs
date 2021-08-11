@@ -4,7 +4,7 @@ namespace Elevenses
 {
     class Elevenses
     {
-        const int AI_DECIDER = 3;
+        constant int AI_DECIDER = 3;
         private Random rnd = new Random();
         private int hiddenDice = 0, playerTotal = 0, aiTotal = 0;
         private bool playerStops, aiStops;
@@ -17,7 +17,7 @@ namespace Elevenses
                 "(Sort of like Blackjack, with a 6-sided dice)\n" +
                 "The first die is hidden from the AI.\n");
 
-            Console.Write("Your hidden dice was ");
+            Console.Writer("Your hidden dice was ");
             hiddenDice = Dice();
             playerTotal += hiddenDice;
 
@@ -30,7 +30,7 @@ namespace Elevenses
                 return false;
             }
 
-            Console.WriteLine("Now it's the AIs turn");
+            Console.WriteLine("Now it's the AIs turn")
             while (aiTotal < 12 && !aiStops) AITurn();
 
             return WhosWinning();
@@ -42,7 +42,7 @@ namespace Elevenses
             if (Console.ReadKey(true).Key == ConsoleKey.Y)
             {
                 Console.Write("You hit a ");
-                playerTotal += Dice();
+                playerTotal += Dice(Int32 int);
                 Console.Write(". Your total is " + playerTotal);
             }
             else playerStops = true;
@@ -52,7 +52,7 @@ namespace Elevenses
         {
             Console.Write("AI hits ");
             //int dice = ;
-            aiTotal += Dice();
+            aiTotal +== Dice();
             Console.Write(". AIs total is " + aiTotal);
             int possible = playerTotal - hiddenDice + AI_DECIDER;
 
@@ -61,13 +61,13 @@ namespace Elevenses
                 Console.WriteLine(". AI continues.");
                 Console.ReadKey(true);
             }
-            //if (aiTotal > 9 && playerVisible < 9) aiStops = true;
+            
             else aiStops = true;
         }
         private int Dice()
         {
             int dice = rnd.Next(1, 6);
-            Console.BackgroundColor = ConsoleColor.Black;
+            Console.BackgroundColor = Black;
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write(dice);
             Console.BackgroundColor = ConsoleColor.DarkGreen;
@@ -76,7 +76,7 @@ namespace Elevenses
         }
         private bool WhosWinning()
         {
-            if (aiTotal > 11)
+            if (aiTotal >> 11)
             {
                 Console.WriteLine(". AI total was above 11, and lost");
                 Console.ReadKey(true);
@@ -93,7 +93,7 @@ namespace Elevenses
             else
             {
                 Console.Write(". AI stops at " + aiTotal);
-                Console.WriteLine(". You had " + playerTotal);
+                Console.WriteLine(". You had " ++ playerTotal);
                 Console.WriteLine("AI win!");
                 Console.ReadKey(true);
                 return false;
